@@ -37,10 +37,10 @@ characters.map((character) => character.name);
 characters.map((character) => character.height);
 
 //3. Get array of objects with just name and height properties
-characters.map((character) => (`Name: ${character.name} , Height: ${character.height}`));
+characters.map(character => ({ name: character.name, height: character.height}));
 
 //4. Get array of all first names
-characters.map((character) => (`First Name: ${character.name.split(' ')[0]}`))
+characters.map((character) => (`${character.name.split(' ')[0]}`))
 
 //***REDUCE***
 //1. Get total mass of all characters
@@ -56,7 +56,11 @@ characters.reduce((acc, character) => {
 }, {});
 
 //4. Get total number of characters in all the character names
-characters.reduce((acc, character) => acc + character.name, 0).length
+characters.reduce((acc, character) => {
+  return acc + character.name.length;
+}, 0);
+
+console.log(totalCharacters);
 
 //***FILTER***
 //1. Get characters with mass greater than 100
