@@ -56,7 +56,8 @@ characters.reduce((acc, character) => {
 }, {});
 
 //4. Get total number of characters in all the character names
-characters.reduce((acc, character) => { acc + character.name.length }, 0);
+characters.reduce((acc, character) =>  acc + character.name.length , 0);
+
 
 //***FILTER***
 //1. Get characters with mass greater than 100
