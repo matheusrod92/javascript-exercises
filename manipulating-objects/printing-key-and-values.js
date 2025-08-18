@@ -6,8 +6,9 @@
 // Output:
 // [["name", "ISRO"], ["age", 35], ["role", "Scientist"]]
 
-function convertListToObject(/* your code here */) {
- // your code here
+function convertListToObject(obj) {
+  console.log(Object.entries(obj))
+  return Object.entries(obj);
 }
 
 convertListToObject({ name: "ISRO", age: 35, role: "Scientist" });

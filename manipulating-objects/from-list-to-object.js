@@ -7,12 +7,21 @@
 //   year : 1964
 // }
 
-function fromListToObject(/* your code here */) {
-    //  your code here
+function fromListToObject(arr) {
+  const obj = {};
+  arr.forEach((pair) => {
+    const key = pair[0];
+    const value = pair[1];
+    obj[key] = value;
+  });
+  return obj;
 }
 
-fromListToObject([['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]]);
-
+fromListToObject([
+  ["make", "Ford"],
+  ["model", "Mustang"],
+  ["year", 1964],
+]);
 
 // 2. Write a function called 'transformGeekData' that transforms some set of data from one format to another.
 
@@ -32,8 +41,31 @@ fromListToObject([['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]]);
 //   }
 // ]
 
-function transformGeekData(/* your code here */) {
-    // your code here
+function transformGeekData(arr) {
+  const transformedData = arr.map((subArr) => {
+    const obj = {};
+    subArr.forEach((pair) => {
+      const key = pair[0];
+      const value = pair[1];
+      obj[key] = value;
+    });
+    return obj;
+  });
+  console.log(transformedData);
+  return transformedData;
 }
 
-transformGeekData([[['firstName', 'Vasanth'], ['lastName', 'Raja'], ['age', 24], ['role', 'JSWizard']], [['firstName', 'Sri'], ['lastName', 'Devi'], ['age', 28], ['role', 'Coder']]])
+transformGeekData([
+  [
+    ["firstName", "Vasanth"],
+    ["lastName", "Raja"],
+    ["age", 24],
+    ["role", "JSWizard"],
+  ],
+  [
+    ["firstName", "Sri"],
+    ["lastName", "Devi"],
+    ["age", 28],
+    ["role", "Coder"],
+  ],
+]);
