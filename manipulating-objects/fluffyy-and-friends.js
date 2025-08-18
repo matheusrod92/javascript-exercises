@@ -39,7 +39,7 @@ let totalWeight = 0;
 cat.catFriends.forEach((friend) => {
   totalWeight = friend.weight + totalWeight;
 });
-// console.log(totalWeight);
+console.log(totalWeight);
 
 // 6. Print the total activities of all cats (op:6)
 cat.catFriends.forEach((friend) => {
