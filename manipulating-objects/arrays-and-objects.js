@@ -362,11 +362,10 @@ function carMaker(odometer) {
   return {
     odometer: odometer,
     drive: (distance) => {
-      // odometer += distance;
-      odometer = odometer + distance;
+      this.odometer += distance;
       return this.odometer;
     },
   };
 }
 
- console.log(carMaker(100).drive(50));
+console.log(carMaker(100).drive(50));
