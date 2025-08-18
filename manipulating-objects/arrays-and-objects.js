@@ -131,7 +131,7 @@ function getName({ name }) {
   return `Hello, my name is ${name}`;
 }
 
-console.log(getName({ id: 1, name: "Sandro", email: "sandrin@elemesmo.com" }));
+console.log(getName(makePersonObject(1, "Sandro", "sandrin@elemesmo.com")));
 
 /**
  * ### Challenge `appleIndex`
@@ -248,10 +248,12 @@ console.log(getCarInfoByIndex(inventory, 0));
  * it will return `This is a Lincoln Town Car`.
  */
 function getLastCarInfo(inventory) {
+  //  return `This is a ${inventory.at(-1).car_make} ${inventory.at(-1).car_model}`;
   return `This is a ${inventory[inventory.length - 1].car_make} ${
     inventory[inventory.length - 1].car_model
   }`;
 }
+
 console.log(getLastCarInfo(inventory));
 
 /**
@@ -325,15 +327,20 @@ console.log(getOlderCars(inventory, 2000));
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
  */
+// function getGermanCars(inventory) {
+//   return inventory.filter((car) => {
+//     return (
+//       car.car_make === "Audi" ||
+//       car.car_make === "Mercedes-Benz" ||
+//       car.car_make === "Volkswagen" ||
+//       car.car_make === "BMW"
+//     );
+//   });
+// }
+
 function getGermanCars(inventory) {
-  return inventory.filter((car) => {
-    return (
-      car.car_make === "Audi" ||
-      car.car_make === "Mercedes-Benz" ||
-      car.car_make === "Volkswagen" ||
-      car.car_make === "BMW"
-    );
-  });
+  const germanMakes = ["Audi", "Mercedes-Benz", "Volkswagen", "BMW"];
+  return inventory.filter((car) => germanMakes.includes(car.car_make));
 }
 
 console.log(getGermanCars(inventory));
@@ -357,9 +364,9 @@ function carMaker(odometer) {
     drive: (distance) => {
       // odometer += distance;
       odometer = odometer + distance;
-      return odometer;
+      return this.odometer;
     },
   };
 }
 
-console.log(carMaker(100).drive(50)); 
+ console.log(carMaker(100).drive(50));

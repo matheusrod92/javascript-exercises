@@ -42,15 +42,7 @@ fromListToObject([
 // ]
 
 function transformGeekData(arr) {
-  const transformedData = arr.map((subArr) => {
-    const obj = {};
-    subArr.forEach((pair) => {
-      const key = pair[0];
-      const value = pair[1];
-      obj[key] = value;
-    });
-    return obj;
-  });
+  const transformedData = arr.map((subArr) => fromListToObject(subArr));
   console.log(transformedData);
   return transformedData;
 }
