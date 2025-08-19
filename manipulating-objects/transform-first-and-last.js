@@ -10,8 +10,12 @@
 // GUVI : 'Geek'
 // }
 
-function transformFirstAndLast(/* you code here */) {
-    // your code here
+function transformFirstAndLast(object) {
+  const key = object[0];
+  const value = object.at(-1);
+
+  console.log({ [key]: value });
+  return { [key]: value };
 }
 
-transformFirstAndLast(['GUVI', 'I', 'am', 'Geek']);
+transformFirstAndLast(["GUVI", "I", "am", "Geek"]);

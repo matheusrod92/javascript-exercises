@@ -6,9 +6,9 @@
 // Example Output:
 // ['name', 'age', 'hasPets']
 
-
-function printAllKeys(/* your code here */) {
-    // your code here
+function printAllKeys(newArray) {
+  console.log(Object.keys(newArray));
+  return Object.keys(newArray);
 }
 
-printAllKeys({ name: 'RanjiniKanth', age: 25, hasPets: true });
+printAllKeys({ name: "RanjiniKanth", age: 25, hasPets: true });

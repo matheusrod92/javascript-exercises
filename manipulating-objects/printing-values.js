@@ -6,8 +6,9 @@
 // Example Output:
 // ["RajiniKanth", 33, false]
 
-function printAllValues(/* you code here */) {
-    // your code here
+function printAllValues(newArray) {
+  console.log(Object.values(newArray));
+  return Object.values(newArray);
 }
 
-printAllValues({ name: "RajiniKanth", age: 33, hasPets : false });
+printAllValues({ name: "RajiniKanth", age: 33, hasPets: false });
